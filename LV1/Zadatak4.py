@@ -1,17 +1,28 @@
-i=0
-max=0
-min=0
+status = 0
+sum = 0
+i = 0
+max = -2147483647
+min = 2147483647
 
-number = 1
-while number > 0:
+srednja_vrijednost = 0
+print("Unesite brojeve. Ako zelite izaci upisite \"Done\"")
+while status == 0:
     try:
-        number = int(input('Enter a positive number: '))
-    if number > 0:
-        if variable>max:
-            max=variable
-        elif variable<min:
-            min=variable
-    except ValueError:
-        print("Ponovite unos")
-        continue
-
+        user = input()
+        a = int(user)
+        sum += a
+        i += 1
+        if a > max:
+            max = a
+        if a < min:
+            min = a
+    except ValueError: 
+        if user == "Done":
+            status = 1
+            break
+        print("Molim vas unesite ili broj ili \"Done\"")
+srednja_vrijednost = sum/i
+print("Ukupno brojeva: ", i)
+print("Srednja vrijednost brojeva: ", srednja_vrijednost)
+print("Najveci broj: ", max)
+print("Najmanji broj: ", min)

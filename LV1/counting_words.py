@@ -17,9 +17,3 @@ for line in fhand:
             counts[word] += 1
         else:
             counts[word] = 1
-
-<<<<<<< HEAD
-print(counts)
-=======
-print(counts)
->>>>>>> 346d3d9bf81fada99b568b5466a21e17e84eb46c
