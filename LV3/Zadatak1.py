@@ -27,5 +27,5 @@ print("Koliko je automobila s automatskim mjenjačem i snagom preko 100 konjskih
 print("Kolika je masa svakog automobila u kilogramima? ",mtcars.wt * 1000 * 0.45359237)
 
 
-mtcars.groupby(['cyl','cyl']).size().unstack().plot.bar(y='mpg',stacked=True)
+mtcars.groupby(['cyl','cyl']).size().unstack().plot.bar(stacked=True)
 plt.show()
