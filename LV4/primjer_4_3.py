@@ -16,9 +16,8 @@ df.columns = boston.feature_names
 df['MEDV'] = pd.DataFrame(boston.target)
 df.shape
 
-#provjera missing values
-#df.replace(0, np.nan , inplace = True)
-#print(df.isnull().sum()/len(df))
+df.replace(0, np.nan , inplace = True)
+print(df.isnull().sum()/len(df))
 
 df = df.drop('ZN', axis=1)
 df = df.drop('CHAS', axis = 1)
@@ -78,14 +77,14 @@ lrn.fit(X_train,Y_train)
 y_predicted= lrn.predict(X_test)
 
 
-#r2 = lrn.score(X_test,Y_test)
-#rmse= (np.sqrt(mean_squared_error(Y_test,y_predicted)))
-#print('r-squared : {}'.format(r2))
-#print('--------------------------------------------------')
-#print('root mean squared error: {}'.format(rmse))
+r2 = lrn.score(X_test,Y_test)
+rmse= (np.sqrt(mean_squared_error(Y_test,y_predicted)))
+print('r-squared : {}'.format(r2))
+print('--------------------------------------------------')
+print('root mean squared error: {}'.format(rmse))
 
 plt.figure(figsize=(10,8))
-plt.scatter(y_predicted,Y_test)
+plt.scatter(y_predicted,Y_test,color='green')
 plt.plot([0,50],[0,50],'--k')
 plt.axis('tight')
 plt.ylabel('The True Prices',  fontsize=20)
