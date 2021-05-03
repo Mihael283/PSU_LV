@@ -92,7 +92,6 @@ plt.plot(xtestlow[:,1],ytestlow,'om',label='test_low')
 plt.legend(loc = 4)
 plt.show()
 
-#pozadinska funkcija vs model
 plt.figure(3)
 plt.plot(x,y_true,'k',label='f')
 plt.plot(x, linearModelhigh.predict(xhigh),'r-',label='model_high')
