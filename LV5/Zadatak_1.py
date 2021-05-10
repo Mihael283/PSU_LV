@@ -36,7 +36,7 @@ def generate_data(n_samples, flagc):
         
     return X
 
-
+#ZADATAK1
 X = generate_data(20, 3)
 
 kmeans = KMeans(n_clusters=4).fit(X)
@@ -46,7 +46,7 @@ plt.scatter(X[:, 0], X[:, 1], c=y_kmeans, s=50, cmap='viridis')
 centers = kmeans.cluster_centers_
 plt.scatter(centers[:, 0], centers[:, 1], c='black', s=200, alpha=0.5)
 
-
+#ZADATAK2
 sse = {}
 for i in range(1, 21, 1):
     kmeans = KMeans(n_clusters=i).fit(X)
@@ -56,7 +56,9 @@ plt.plot(list(sse.keys()), list(sse.values()))
 plt.xlim([2,20])
 plt.ylim([500,10000])
 
+#ZADATAK3
 Z = linkage(X, 'single')
 fig = plt.figure(figsize=(25, 10))
 dn = dendrogram(Z)
 plt.show()
+
