@@ -6,7 +6,7 @@ import numpy as np
 import joblib
 
 # ucitaj sliku i prikazi ju
-filename = 'test.png'
+filename = 'Screenshot_108.png'
 
 img = mpimg.imread(filename)
 img = color.rgb2gray(img)
@@ -19,6 +19,7 @@ plt.show()
 
 # TODO: prebacite sliku u vektor odgovarajuce velicine
 
+img= img.reshape(1,28*28)
 
 # vrijednosti piksela kao float32
 img = img.astype('float32')
@@ -31,4 +32,4 @@ mlp_mnist = joblib.load(filename)
 
 
 print("------------------------")
-print("Slika sadrzi znamenku: ", label)
+print("Slika sadrzi znamenku: ", mlp_mnist.predict(img))
